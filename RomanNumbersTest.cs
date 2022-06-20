@@ -39,11 +39,21 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("III", result);
         }
-
+        [Test]
+        public void Given4_return_IV()
+        {
+            //arrange 
+            int number = 4;
+            //act 
+            var result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual("IV", result);
+        }
         private string getRomanNumber(int number)
         {
             if (number == 2) return "II";
             if (number == 3) return "III";
+            if (number == 4) return "IV";
             return "I";
         }
     }
