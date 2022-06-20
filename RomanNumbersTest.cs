@@ -51,10 +51,17 @@ namespace RomanNumbers
         }
         private string getRomanNumber(int number)
         {
-            if (number == 2) return "II";
-            if (number == 3) return "III";
-            if (number == 4) return "IV";
-            return "I";
+            string result = "I";
+            if( number == 4) return result + "V";
+            
+
+                for (int i = 1; i < number; i++)
+                {
+                    result += "I";
+                }
+            return result;
+        
+           
         }
     }
 }
