@@ -83,20 +83,22 @@ namespace RomanNumbers
 
         private string getRomanNumber(int number)
         {
-           if (number == 7) return "VII";
+            if (number == 7) return "VII";
             if (number == 6) return "VI";
             if (number == 5) return "V";
-            string result = "I";
-            if( number == 4) return result + "V";
-            
+            if (number == 4) return "IV";
+            return ComputeNumberUnderFour(number);
+        }
 
-                for (int i = 1; i < number; i++)
-                {
-                    result += "I";
-                }
+        private static string ComputeNumberUnderFour(int number)
+        {
+            string result = "";
+            for (int i = 1; i <= number; i++)
+            {
+                result += "I";
+            }
+
             return result;
-        
-           
         }
     }
 }
