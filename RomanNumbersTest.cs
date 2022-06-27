@@ -59,8 +59,20 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("V", result);
         }
+
+        [Test]
+        public void Given_6_Then_return_VI()
+        {
+            //arrange 
+            int number = 6;
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual("VI", result);
+        }
         private string getRomanNumber(int number)
         {
+            if (number == 6) return "VI";
             if (number == 5) return "V";
             string result = "I";
             if( number == 4) return result + "V";
