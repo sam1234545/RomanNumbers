@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace RomanNumbers
 {
@@ -83,11 +84,21 @@ namespace RomanNumbers
 
         private string getRomanNumber(int number)
         {
-            if (number == 7) return "VII";
-            if (number == 6) return "VI";
+            if (number > 5) return ComputeNumberOverFive(number);
             if (number == 5) return "V";
             if (number == 4) return "IV";
             return ComputeNumberUnderFour(number);
+        }
+
+        private string ComputeNumberOverFive(int number)
+        {
+            string result = "V";
+            for (int i =1; i <= number-5 ; i++)
+            {
+                result += "I";
+            }
+
+            return result;
         }
 
         private static string ComputeNumberUnderFour(int number)
