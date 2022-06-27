@@ -10,7 +10,7 @@ namespace RomanNumbers
         }
 
         [Test]
-        public void Given1_return_I()
+        public void Given_1_Then_return_I()
         {
             //arrange 
             int number = 1;
@@ -20,7 +20,7 @@ namespace RomanNumbers
             Assert.AreEqual("I", result);
         }
         [Test]
-        public void Given2_return_II()
+        public void Given_2_Then_return_II()
         {
             //arrange 
             int number = 2;
@@ -30,7 +30,7 @@ namespace RomanNumbers
             Assert.AreEqual("II", result);
         }
         [Test]
-        public void Given3_return_III()
+        public void Given_3_Then_return_III()
         {
             //arrange 
             int number = 3;
@@ -40,7 +40,7 @@ namespace RomanNumbers
             Assert.AreEqual("III", result);
         }
         [Test]
-        public void Given4_return_IV()
+        public void Given_4_Then_return_IV()
         {
             //arrange 
             int number = 4;
@@ -50,7 +50,7 @@ namespace RomanNumbers
             Assert.AreEqual("IV", result);
         }
         [Test]
-        public void Given5_return_V()
+        public void Given_5_Then_return_V()
         {
             //arrange 
             int number = 5;
