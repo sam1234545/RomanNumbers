@@ -15,7 +15,7 @@ namespace RomanNumbers
             //arrange 
             int number = 1;
             //act 
-            var result = getRomanNumber(number);
+            string result = getRomanNumber(number);
             //assert 
             Assert.AreEqual("I", result);
         }
@@ -25,7 +25,7 @@ namespace RomanNumbers
             //arrange 
             int number = 2;
             //act 
-            var result = getRomanNumber(number);
+            string result = getRomanNumber(number);
             //assert 
             Assert.AreEqual("II", result);
         }
@@ -35,7 +35,7 @@ namespace RomanNumbers
             //arrange 
             int number = 3;
             //act 
-            var result = getRomanNumber(number);
+            string result = getRomanNumber(number);
             //assert 
             Assert.AreEqual("III", result);
         }
@@ -45,7 +45,7 @@ namespace RomanNumbers
             //arrange 
             int number = 4;
             //act 
-            var result = getRomanNumber(number);
+            string result = getRomanNumber(number);
             //assert 
             Assert.AreEqual("IV", result);
         }
@@ -55,7 +55,7 @@ namespace RomanNumbers
             //arrange 
             int number = 5;
             //act 
-            var result = getRomanNumber(number);
+            string result = getRomanNumber(number);
             //assert 
             Assert.AreEqual("V", result);
         }
@@ -70,6 +70,8 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("VI", result);
         }
+
+
         private string getRomanNumber(int number)
         {
             if (number == 6) return "VI";
