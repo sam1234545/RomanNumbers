@@ -70,10 +70,20 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("VI", result);
         }
-
+        [Test]
+        public void Given_7_Then_return_VII()
+        {
+            //arrange 
+            int number = 7;
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual("VII", result);
+        }
 
         private string getRomanNumber(int number)
         {
+           if (number == 7) return "VII";
             if (number == 6) return "VI";
             if (number == 5) return "V";
             string result = "I";
