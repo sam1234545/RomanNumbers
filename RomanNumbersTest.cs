@@ -5,10 +5,6 @@ namespace RomanNumbers
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
 
         [TestCase(1, "I")]
         [TestCase(2, "II")]
@@ -42,6 +38,7 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("V", result);
         }
+
         [TestCase(6, "VI")]
         [TestCase(7, "VII")]
         [TestCase(8, "VIII")]
@@ -119,9 +116,19 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual(expected, result);
         }
-
+        [Test]
+        public void Given_19_Then_return_XIX()
+        {
+            //arrange 
+            int number = 14;
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual("XIX", result);
+        }
         private string getRomanNumber(int number)
         {
+            if (number == 19) return "XIX";
             if (number == 15) return "XV";
             if (number == 14) return "XIV";
             if (number == 10) return "X";
