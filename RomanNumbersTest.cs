@@ -144,14 +144,26 @@ namespace RomanNumbers
             if (number == 14) return "XIV";
             if (number == 4) return "IV";
 
-            if (number == 10) return "X";
-            if (number == 20) return "XX";
+            if (number % 10 == 0) return ComputeTheRomanNumberCaseTen(number);
 
             if (number == 5) return "V";
             if (number == 15) return "XV";
            
             return ComputeTheRomanNumber(number);
         }
+
+        private string ComputeTheRomanNumberCaseTen(int number)
+        {
+            string result = "";
+            int counter = number / 10;
+            for( int i = 0; i < counter; i++)
+            {
+                result += "X";
+
+            }
+            return result;
+        }
+
         private string ComputeTheRomanNumber(int number)
         {
             string result;
