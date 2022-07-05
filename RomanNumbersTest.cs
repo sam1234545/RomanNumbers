@@ -10,35 +10,17 @@ namespace RomanNumbers
         {
         }
 
-        [Test]
-        public void Given_1_Then_return_I()
+        [TestCase(1, "I")]
+        [TestCase(2, "II")]
+        [TestCase(3, "III")]
+        public void Given_number_less_than_5_Then_return_The_right_roman_presentation(int number, string expected)
         {
             //arrange 
-            int number = 1;
+            //Testcase values
             //act 
             string result = getRomanNumber(number);
             //assert 
-            Assert.AreEqual("I", result);
-        }
-        [Test]
-        public void Given_2_Then_return_II()
-        {
-            //arrange 
-            int number = 2;
-            //act 
-            string result = getRomanNumber(number);
-            //assert 
-            Assert.AreEqual("II", result);
-        }
-        [Test]
-        public void Given_3_Then_return_III()
-        {
-            //arrange 
-            int number = 3;
-            //act 
-            string result = getRomanNumber(number);
-            //assert 
-            Assert.AreEqual("III", result);
+            Assert.AreEqual(expected, result);
         }
         [Test]
         public void Given_4_Then_return_IV()
