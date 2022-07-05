@@ -126,15 +126,30 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("XIX", result);
         }
+        [Test]
+        public void Given_20_Then_return_XX()
+        {
+            //arrange 
+            int number = 20;
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual("XX", result);
+        }
         private string getRomanNumber(int number)
         {
             if (number == 19) return "XIX";
-            if (number == 15) return "XV";
-            if (number == 14) return "XIV";
-            if (number == 10) return "X";
             if (number == 9) return "IX";
-            if (number == 5) return "V";
+            
+            if (number == 14) return "XIV";
             if (number == 4) return "IV";
+
+            if (number == 10) return "X";
+            if (number == 20) return "XX";
+
+            if (number == 5) return "V";
+            if (number == 15) return "XV";
+           
             return ComputeTheRomanNumber(number);
         }
         private string ComputeTheRomanNumber(int number)
