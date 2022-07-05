@@ -81,15 +81,17 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("VII", result);
         }
-        [Test]
-        public void Given_8_Then_return_VIII()
+        [TestCase (6, "VI")]
+        [TestCase(7, "VII")]
+        [TestCase(8, "VIII")]
+        public void Given_number_bigger_than_5_Then_return_The_right_roman_presentation(int number,  string expected )
         {
             //arrange 
-            int number = 8;
+            //Testcase values
             //act 
             string result = getRomanNumber(number);
             //assert 
-            Assert.AreEqual("VIII", result);
+            Assert.AreEqual(expected, result);
         }
         private string getRomanNumber(int number)
         {
