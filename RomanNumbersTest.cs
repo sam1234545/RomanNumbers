@@ -60,28 +60,7 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("V", result);
         }
-
-        [Test]
-        public void Given_6_Then_return_VI()
-        {
-            //arrange 
-            int number = 6;
-            //act 
-            string result = getRomanNumber(number);
-            //assert 
-            Assert.AreEqual("VI", result);
-        }
-        [Test]
-        public void Given_7_Then_return_VII()
-        {
-            //arrange 
-            int number = 7;
-            //act 
-            string result = getRomanNumber(number);
-            //assert 
-            Assert.AreEqual("VII", result);
-        }
-        [TestCase (6, "VI")]
+        [TestCase(6, "VI")]
         [TestCase(7, "VII")]
         [TestCase(8, "VIII")]
         public void Given_number_bigger_than_5_Then_return_The_right_roman_presentation(int number,  string expected )
