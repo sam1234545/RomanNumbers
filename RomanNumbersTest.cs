@@ -117,8 +117,21 @@ namespace RomanNumbers
         }
         private string ComputeTheRomanNumber(int number)
         {
-            string result = "";
-            int counter = 0;
+            string result;
+            int counter;
+            GetTheInitialValues(number, out result, out counter);
+            for (int i = 1; i <= number - counter; i++)
+            {
+                result += "I";
+            }
+            return result;
+
+        }
+
+        private static void GetTheInitialValues(int number, out string result, out int counter)
+        {
+            result = "";
+            counter = 0;
             if (number > 5 && number < 10)
             {
                 counter = 5;
@@ -130,13 +143,6 @@ namespace RomanNumbers
                 counter = 10;
                 result = "X";
             }
-            
-            for (int i = 1; i <= number - counter; i++)
-            {
-                result += "I";
-            }
-            return result;
-
         }
     }
 }
