@@ -108,7 +108,7 @@ namespace RomanNumbers
 
         private string getRomanNumber(int number)
         {
-            if (number > 10) return ComputeNumberOverTen(number);
+            if (number > 10) return ComputeTheRomanNumber(number);
             if (number == 10) return "X";
             if (number == 9) return "IX";
             if (number > 5) return ComputeNumberOverFive(number);
@@ -116,6 +116,30 @@ namespace RomanNumbers
             if (number == 4) return "IV";
             return ComputeNumberUnderFour(number);
         }
+        private string ComputeTheRomanNumber(int number)
+        {
+            string result = "";
+            int counter = 0;
+            if (number > 5 && number < 10)
+            {
+                counter = 5;
+                result = "V";
+
+            }
+            if (number > 10 && number < 15)
+            {
+                counter = 10;
+                result = "X";
+            }
+            
+            for (int i = 1; i <= number - counter; i++)
+            {
+                result += "I";
+            }
+            return result;
+
+        }
+
 
         private string ComputeNumberOverTen(int number)
         {
