@@ -45,7 +45,7 @@ namespace RomanNumbers
         [TestCase(6, "VI")]
         [TestCase(7, "VII")]
         [TestCase(8, "VIII")]
-        public void Given_number_bigger_than_5_Then_return_The_right_roman_presentation(int number,  string expected )
+        public void Given_number_greater_than_5_and_less_than_10_Then_return_The_right_roman_presentation(int number,  string expected )
         {
             //arrange 
             //Testcase values
