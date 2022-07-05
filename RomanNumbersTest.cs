@@ -138,39 +138,5 @@ namespace RomanNumbers
             return result;
 
         }
-
-
-        private string ComputeNumberOverTen(int number)
-        {
-            string result = "X";
-            for (int i = 1; i <= number - 10; i++)
-            {
-                result += "I";
-            }
-            return result;
-
-        }
-
-        private string ComputeNumberOverFive(int number)
-        {
-            string result = "V";
-            for (int i =1; i <= number-5 ; i++)
-            {
-                result += "I";
-            }
-
-            return result;
-        }
-
-        private static string ComputeNumberUnderFour(int number)
-        {
-            string result = "";
-            for (int i = 1; i <= number; i++)
-            {
-                result += "I";
-            }
-
-            return result;
-        }
     }
 }
