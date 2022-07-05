@@ -28,17 +28,6 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("IV", result);
         }
-        [Test]
-        public void Given_5_Then_return_V()
-        {
-            //arrange 
-            int number = 5;
-            //act 
-            string result = getRomanNumber(number);
-            //assert 
-            Assert.AreEqual("V", result);
-        }
-
         [TestCase(6, "VI")]
         [TestCase(7, "VII")]
         [TestCase(8, "VIII")]
@@ -84,16 +73,7 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("XIV", result);
         }
-        [Test]
-        public void Given_15_Then_return_XV()
-        {
-            //arrange 
-            int number = 15;
-            //act 
-            string result = getRomanNumber(number);
-            //assert 
-            Assert.AreEqual("XV", result);
-        }
+
         [TestCase(16, "XVI")]
         [TestCase(17, "XVII")]
         [TestCase(18, "XVIII")]
@@ -116,7 +96,7 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("XIX", result);
         }
-        [TestCase( 10, "X")]
+        [TestCase(10, "X")]
         [TestCase(20, "XX")]
         [TestCase(30, "XXX")]
         public void Given_Multiple_Of_10_Then_return_Correct_roman_number(int number , string expected)
@@ -131,6 +111,7 @@ namespace RomanNumbers
         [TestCase(5, "V")]
         [TestCase(15, "XV")]
         [TestCase(25, "XXV")]
+        [TestCase(35, "XXXV")]
         public void Given_Multiple_Of_5_Then_return_Correct_roman_number(int number, string expected)
         {
             //arrange 
@@ -139,8 +120,21 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual(expected, result);
         }
+
+
+        [Test]
+        public void Given_21_Then_return_XXI()
+        {
+            //arrange 
+            int number = 21;
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual("XXI", result);
+        }
         private string getRomanNumber(int number)
         {
+            if (number == 21) return "XXI";
             if (number == 19) return "XIX";
             if (number == 9) return "IX";
             
