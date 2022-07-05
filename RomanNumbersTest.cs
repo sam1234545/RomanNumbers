@@ -137,10 +137,22 @@ namespace RomanNumbers
 
             if (number % 10 == 0) return ComputeTheRomanNumberCaseTen(number);
 
-            if (number == 5) return "V";
-            if (number == 15) return "XV";
+            if (number % 5 == 0) return ComputeTheRomanNumberCaseFive(number);
            
             return ComputeTheRomanNumber(number);
+        }
+
+        private string ComputeTheRomanNumberCaseFive(int number)
+        {
+            string result = "";
+            int counter = number/5 ; 
+            for (int i = 1; i < counter-1; i++)
+            {
+                result += "X";
+
+            }
+            result += "V";
+            return result;
         }
 
         private string ComputeTheRomanNumberCaseTen(int number)
