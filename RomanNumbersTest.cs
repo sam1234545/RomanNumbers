@@ -127,6 +127,18 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual(expected, result);
         }
+
+        [TestCase(5, "V")]
+        [TestCase(15, "XV")]
+        [TestCase(25, "XXV")]
+        public void Given_Multiple_Of_5_Then_return_Correct_roman_number(int number, string expected)
+        {
+            //arrange 
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual(expected, result);
+        }
         private string getRomanNumber(int number)
         {
             if (number == 19) return "XIX";
@@ -145,11 +157,10 @@ namespace RomanNumbers
         private string ComputeTheRomanNumberCaseFive(int number)
         {
             string result = "";
-            int counter = number/5 ; 
-            for (int i = 1; i < counter-1; i++)
+            int counter = (number-5)/10 ; 
+            for (int i = 0; i < counter; i++)
             {
                 result += "X";
-
             }
             result += "V";
             return result;
