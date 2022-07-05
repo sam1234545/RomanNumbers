@@ -62,16 +62,6 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("IX", result);
         }
-        [Test]
-        public void Given_10_Then_return_X()
-        {
-            //arrange 
-            int number = 10;
-            //act 
-            string result = getRomanNumber(number);
-            //assert 
-            Assert.AreEqual("X", result);
-        }
         [TestCase(11, "XI")]
         [TestCase(12, "XII")]
         [TestCase(13, "XIII")]
@@ -107,7 +97,7 @@ namespace RomanNumbers
         [TestCase(16, "XVI")]
         [TestCase(17, "XVII")]
         [TestCase(18, "XVIII")]
-        public void Given_number_greater_than_15_Then_return_The_right_roman_presentation(int number, string expected)
+        public void Given_number_greater_than_15_Then_return_The_right_roman_number(int number, string expected)
         {
             //arrange 
             //Testcase values
@@ -126,15 +116,16 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("XIX", result);
         }
-        [Test]
-        public void Given_20_Then_return_XX()
+        [TestCase( 10, "X")]
+        [TestCase(20, "XX")]
+        [TestCase(30, "XXX")]
+        public void Given_Multiple_Of_10_Then_return_Correct_roman_number(int number , string expected)
         {
             //arrange 
-            int number = 20;
             //act 
             string result = getRomanNumber(number);
             //assert 
-            Assert.AreEqual("XX", result);
+            Assert.AreEqual(expected, result);
         }
         private string getRomanNumber(int number)
         {
