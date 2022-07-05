@@ -96,6 +96,16 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("XIX", result);
         }
+        [Test]
+        public void Given_29_Then_return_XIX()
+        {
+            //arrange 
+            int number = 29;
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual("XXIX", result);
+        }
         [TestCase(10, "X")]
         [TestCase(20, "XX")]
         [TestCase(30, "XXX")]
@@ -135,9 +145,13 @@ namespace RomanNumbers
         private string getRomanNumber(int number)
         {
             if (number == 21) return "XXI";
-            if (number == 19) return "XIX";
-            if (number == 9) return "IX";
-            
+
+            //if (number == 19) return "XIX";
+            //if (number == 9) return "IX";
+
+            if ((number + 1) % 10 == 0) return ComputeTheRomanNumberCaseAlmostTen(number);
+
+
             if (number == 14) return "XIV";
             if (number == 4) return "IV";
 
@@ -146,6 +160,17 @@ namespace RomanNumbers
             if (number % 5 == 0) return ComputeTheRomanNumberCaseFive(number);
            
             return ComputeTheRomanNumber(number);
+        }
+
+        private string ComputeTheRomanNumberCaseAlmostTen(int number)
+        {
+            string result = ""; 
+            int counter = (number +1)/10  ;
+            for( int i = 0; i < counter-1; i++ )
+            {
+                result += "X";
+;            }
+            return result+"IX";
         }
 
         private string ComputeTheRomanNumberCaseFive(int number)
