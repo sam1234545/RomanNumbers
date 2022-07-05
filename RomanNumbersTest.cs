@@ -81,7 +81,16 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("VII", result);
         }
-
+        [Test]
+        public void Given_8_Then_return_VIII()
+        {
+            //arrange 
+            int number = 8;
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual("VIII", result);
+        }
         private string getRomanNumber(int number)
         {
             if (number > 5) return ComputeNumberOverFive(number);
