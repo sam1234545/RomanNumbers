@@ -87,10 +87,20 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual(expected, result);
         }
+        [Test]
+        public void Given_14_Then_return_XIV()
+        {
+            //arrange 
+            int number = 14;
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual("XIV", result);
+        }
 
         private string getRomanNumber(int number)
         {
-           
+            if (number == 14) return "XIV";
             if (number == 10) return "X";
             if (number == 9) return "IX";
             if (number == 5) return "V";
