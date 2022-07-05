@@ -93,14 +93,39 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("X", result);
         }
+        [TestCase(11, "XI")]
+        [TestCase(12, "XII")]
+        [TestCase(13, "XIII")]
+        public void Given_number_greater_than_10_and_less_than_15_Then_return_The_right_roman_presentation(int number, string expected)
+        {
+            //arrange 
+            //Testcase values
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual(expected, result);
+        }
+
         private string getRomanNumber(int number)
         {
+            if (number > 10) return ComputeNumberOverTen(number);
             if (number == 10) return "X";
             if (number == 9) return "IX";
             if (number > 5) return ComputeNumberOverFive(number);
             if (number == 5) return "V";
             if (number == 4) return "IV";
             return ComputeNumberUnderFour(number);
+        }
+
+        private string ComputeNumberOverTen(int number)
+        {
+            string result = "X";
+            for (int i = 1; i <= number - 10; i++)
+            {
+                result += "I";
+            }
+            return result;
+
         }
 
         private string ComputeNumberOverFive(int number)
