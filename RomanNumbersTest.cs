@@ -107,6 +107,18 @@ namespace RomanNumbers
             //assert 
             Assert.AreEqual("XV", result);
         }
+        [TestCase(16, "XVI")]
+        [TestCase(17, "XVII")]
+        [TestCase(18, "XVIII")]
+        public void Given_number_greater_than_15_Then_return_The_right_roman_presentation(int number, string expected)
+        {
+            //arrange 
+            //Testcase values
+            //act 
+            string result = getRomanNumber(number);
+            //assert 
+            Assert.AreEqual(expected, result);
+        }
 
         private string getRomanNumber(int number)
         {
@@ -139,12 +151,16 @@ namespace RomanNumbers
             {
                 counter = 5;
                 result = "V";
-
             }
             if (number > 10 && number < 15)
             {
                 counter = 10;
                 result = "X";
+            }
+            if (number >  15)
+            {
+                counter = 15;
+                result = "XV";
             }
         }
     }
