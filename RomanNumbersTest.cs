@@ -108,13 +108,12 @@ namespace RomanNumbers
 
         private string getRomanNumber(int number)
         {
-            if (number > 10) return ComputeTheRomanNumber(number);
+           
             if (number == 10) return "X";
             if (number == 9) return "IX";
-            if (number > 5) return ComputeNumberOverFive(number);
             if (number == 5) return "V";
             if (number == 4) return "IV";
-            return ComputeNumberUnderFour(number);
+            return ComputeTheRomanNumber(number);
         }
         private string ComputeTheRomanNumber(int number)
         {
