@@ -132,22 +132,19 @@ namespace RomanNumbers
         }
 
 
-        [Test]
-        public void Given_21_Then_return_XXI()
+        [TestCase(21, "XXI")]
+        [TestCase(22, "XXII")]
+        [TestCase(23, "XXIII")]
+        public void Given_number_greater_than_20_Then_return_Correct_roman_number(int number, string expected)
         {
             //arrange 
-            int number = 21;
             //act 
             string result = getRomanNumber(number);
             //assert 
-            Assert.AreEqual("XXI", result);
+            Assert.AreEqual(expected, result);
         }
         private string getRomanNumber(int number)
         {
-            //if (number == 21) return "XXI";
-
-            //if (number == 19) return "XIX";
-            //if (number == 9) return "IX";
 
             if ((number + 1) % 10 == 0) return ComputeTheRomanNumberCaseAlmostTen(number);
 
