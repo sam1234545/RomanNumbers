@@ -144,7 +144,7 @@ namespace RomanNumbers
         }
         private string getRomanNumber(int number)
         {
-            if (number == 21) return "XXI";
+            //if (number == 21) return "XXI";
 
             //if (number == 19) return "XIX";
             //if (number == 9) return "IX";
@@ -224,10 +224,15 @@ namespace RomanNumbers
                 counter = 10;
                 result = "X";
             }
-            if (number >  15)
+            if (number >  15 && number <20 )
             {
                 counter = 15;
                 result = "XV";
+            }
+            if( number > 20)
+            {
+                counter = 20;
+                result = "XX";
             }
         }
     }
